@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tank Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>💧 Water Tank System</h1>
+                <div class="status-indicator">
+                    <span id="mqtt-status" class="status-dot disconnected"></span>
+                    <span id="mqtt-text">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Primary Metrics -->
+            <div class="metrics-row">
+                <!-- Water Level Card -->
+                <div class="card water-level-card">
+                    <h2>Water Level</h2>
+                    <div class="gauge-container">
+                        <svg class="gauge" viewBox="0 0 200 200">
+                            <!-- Background arc -->
+                            <path class="gauge-background" d="M 30 170 A 100 100 0 0 1 170 170"></path>
+                            <!-- Progress arc -->
+                            <path class="gauge-progress" id="gauge-arc" d="M 30 170 A 100 100 0 0 1 170 170" stroke-dasharray="0, 314"></path>
+                        </svg>
+                        <div class="gauge-text">
+                            <div class="gauge-value" id="water-level">0%</div>
+                            <div class="gauge-label">Percentage</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Card -->
+                <div class="card status-card">
+                    <h2>System Status</h2>
+                    <div class="status-display">
+                        <div class="status-badge" id="status-badge">UNKNOWN</div>
+                        <div class="status-info">
+                            <div class="info-row">
+                                <span class="label">Distance:</span>
+                                <span class="value" id="distance-value">0 cm</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Water Height:</span>
+                                <span class="value" id="water-height-value">0 cm</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Motor:</span>
+                                <span class="value" id="motor-value">OFF</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Last Update:</span>
+                                <span class="value" id="last-update">--:--:--</span>
+                            </div>
+                            <div class="info-row" id="red-sensor-status">
+                                <span class="label">💧 Red Sensor:</span>
+                                <span class="value" id="red-sensor-value">NO_WATER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="card stats-card">
+                    <h2>Quick Stats</h2>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-value" id="stat-level">0</div>
+                            <div class="stat-label">Level %</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="stat-distance">0</div>
+                            <div class="stat-label">Distance cm</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="stat-motor">OFF</div>
+                            <div class="stat-label">Motor</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="stat-updates">0</div>
+                            <div class="stat-label">Updates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Chart -->
+            <div class="card chart-card">
+                <h2>Water Level History (Last 60 seconds)</h2>
+                <div class="chart-container">
+                    <canvas id="historyChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Raw Data -->
+            <div class="card raw-data-card">
+                <h2>Raw Data</h2>
+                <pre id="raw-data">{"status": "Waiting for data..."}</pre>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>MQTT Broker: <code>192.168.15.2:1883</code> | Topic: <code>water_tank/status</code></p>
+            <p>Last connected: <span id="footer-time">--:--:--</span></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
