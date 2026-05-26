@@ -25,6 +25,7 @@
 - [Web Dashboard](#-web-dashboard)
 - [Usage](#-usage)
 - [Project Structure](#-project-structure)
+- [Demonstration](#-demonstration)
 - [Future Improvements](#-future-improvements)
 - [Contributors](#-contributors)
 - [License](#-license)
@@ -547,30 +548,41 @@ WaterTankMonitoringSystem/
 
 ## 📊 Demonstration
 
-### Screenshots
-*Dashboard screenshots would be added here showing:*
-- Main dashboard with gauge
-- Live status display
-- Historical charts
-- Mobile view
+### Dashboard Screenshots
 
-### Demo Video
-*Demo GIF showing:*
-- Real-time water level updates
-- Automatic motor control
-- Overflow alert triggering
-- Dashboard responsiveness
+#### Main Dashboard Interface
+![Smart Water Tank Dashboard](Dashboard_Image/Dashboard.png)
+
+*The dashboard displays:*
+- Real-time water level gauge with color-coded status
+- Live sensor readings (distance, water height, motor state)
+- Historical water level trends over the last 60 seconds
+- System status indicators and MQTT connection status
+- Responsive design that works on desktop, tablet, and mobile devices
+
+### Project Presentation
+
+📊 **Full Project Presentation**: [Smart_Water_Tank_Presentation.pptx](Presenatation/Smart_Water_Tank_Presentation.pptx)
+
+*Includes:*
+- Problem statement and motivation
+- Hardware and circuit design
+- System architecture overview
+- MQTT protocol explanation
+- Dashboard features walkthrough
+- Test results and performance metrics
+- Future improvements roadmap
+- Q&A section
 
 ---
 
-## 🤝 Contributors
+## 🤝 Author
 
-### Project Leads
-- **Muhammad Haris Irfan** - Hardware Design, Firmware Development, IoT Architecture
-- **Muhammad Zain** - System Integration, MQTT Configuration, Testing
+- **Muhammad Haris Irfan**
 
 ### Acknowledgments
 Special thanks to:
+- my classmate Muhammad Zain.
 - Arduino community for excellent documentation
 - Adafruit for sensor libraries
 - MQTT.org for protocol specifications
@@ -588,7 +600,7 @@ Free to use, modify, and distribute with attribution. Perfect for educational an
 ```
 MIT License
 
-Copyright (c) 2024 Muhammad Haris Irfan & Muhammad Zain
+Copyright (c) 2026 Muhammad Haris Irfan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -609,7 +621,7 @@ copies or substantial portions of the Software.
 - 📖 Check [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for common issues
 - 🐛 Report bugs via GitHub Issues
 - 💡 Request features via GitHub Discussions
-- 📧 Contact: [Your Email]
+- 📧 Contact: harisirfanafzalbutt@gmail.com
 
 ### Quick Links
 - 🌐 [MQTT Protocol Details](docs/MQTT_PROTOCOL.md)
@@ -628,12 +640,6 @@ This project demonstrates:
 - **Problem Solving**: Real-world engineering challenges
 - **System Design**: Architecture and scalability
 
-Perfect for:
-- Computer Science/Engineering students
-- IoT enthusiasts
-- Home automation projects
-- Smart city applications
-- Water resource management
 
 ---
 
@@ -688,7 +694,6 @@ Each installation requires calibration:
 
 ### ⭐ If you find this project useful, please give it a star!
 
-**Made with ❤️ for smart water management**
 
 [⬆ Back to Top](#-smart-water-tank-monitoring--overflow-prevention-system)
 
