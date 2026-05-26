@@ -548,6 +548,20 @@ WaterTankMonitoringSystem/
 
 ## 📊 Demonstration
 
+### Hardware Prototype
+
+#### Circuit & Assembly Images
+
+| Image 1 | Image 2 | Image 3 |
+|---------|---------|---------|
+| ![Prototype 1](PrototypeImages/1.jpeg) | ![Prototype 2](PrototypeImages/2.jpeg) | ![Prototype 3](PrototypeImages/3.jpeg) |
+
+*Showing:*
+- Wemos D1 Mini microcontroller setup
+- Ultrasonic sensor and water sensor integration
+- Servo motor and buzzer connections
+- Complete breadboard circuit layout
+
 ### Dashboard Screenshots
 
 #### Main Dashboard Interface
